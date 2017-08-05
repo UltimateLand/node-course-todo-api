@@ -299,7 +299,11 @@ describe('POST /users', () => {
 });
 
 describe('POST /users/login', () => {
+<<<<<<< HEAD
   it('should login user and return auth token', (done) => {
+=======
+  it('should login user andreturn auth token', (done) => {
+>>>>>>> 1bfe8352ff7af05fa79341bd6f63b7619dbf45f2
     request(app)
       .post('/users/login')
       .send({
@@ -316,7 +320,11 @@ describe('POST /users/login', () => {
         }
 
         User.findById(users[1]._id).then((user) => {
+<<<<<<< HEAD
           expect(user.tokens[1]).toInclude({
+=======
+          expect(user.tokens[0]).toInclude({
+>>>>>>> 1bfe8352ff7af05fa79341bd6f63b7619dbf45f2
             access: 'auth',
             token: res.headers['x-auth']
           });
@@ -342,6 +350,7 @@ describe('POST /users/login', () => {
         }
 
         User.findById(users[1]._id).then((user) => {
+<<<<<<< HEAD
           expect(user.tokens.length).toBe(1);
           done();
         }).catch((e) => done(e));
@@ -361,6 +370,8 @@ describe('DELETE /users/me/token', () => {
         }
 
         User.findById(users[0]._id).then((user) => {
+=======
+>>>>>>> 1bfe8352ff7af05fa79341bd6f63b7619dbf45f2
           expect(user.tokens.length).toBe(0);
           done();
         }).catch((e) => done(e));
